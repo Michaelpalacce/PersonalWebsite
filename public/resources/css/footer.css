@@ -1,0 +1,14 @@
+.footer a{
+	font-size: 18pt;
+}
+
+.footer
+{
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 2000;
+	width: 100%;
+	bottom: 0;
+	background-color: #2b2b2b;
+}

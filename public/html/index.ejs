@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include("partial/stylesheets") %>
+	<link rel="stylesheet" type="text/css" href="public/resources/css/index.css" />
+	<title>Stefan's Site</title>
+</head>
+
+<body>
+	<main class="flex-fill container main-container">
+		<div class="row">
+			<div class="col">
+				<div class="white-text hello-text"><span class="typer" data-type-speed="125">Hello</span><span class="blinker">_</span></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="name-text" >
+					<span class="blue-text">&lt;name&gt;
+						<span class="white-text">My name is
+							<span class="my-name-text">
+								Stefan Genov
+							</span>
+						</span>
+						&lt;/name&gt;
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="profession-text">
+					<span class="orange-text">
+						&lt;profession&gt;
+						<span class="white-text my-profession-text">
+							Backend Developer & DevOps
+						</span>
+						&lt;/profession&gt;
+					</span>
+				</div>
+			</div>
+		</div>
+	</main>
+	<%- include("partial/footer") %>
+</body>
+<%- include("partial/js-libs") %>
+</html>

@@ -1,0 +1,10 @@
+
+Uploads/*
+node_modules/*
+.idea/*
+.github/*
+logs/*
+
+.env
+cache
+package-lock.json

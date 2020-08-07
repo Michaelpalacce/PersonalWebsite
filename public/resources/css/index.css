@@ -1,0 +1,45 @@
+.main-container
+{
+	margin-top: 10%;
+	min-width: 450px;
+	margin-bottom: 150px;
+}
+
+.hello-text
+{
+	font-size: 72pt;
+	font-weight: lighter;
+}
+
+.name-text
+{
+	margin-top: 100px;
+	white-space: nowrap;
+	letter-spacing: 2px;
+	font-size: 24pt;
+	text-align: center;
+}
+
+.my-name-text
+{
+	font-size: 36pt;
+	text-align: center;
+}
+
+.profession-text
+{
+	white-space: nowrap;
+	margin-top: 10px;
+	font-size: 14pt;
+	text-align: center;
+}
+
+.my-profession-text
+{
+	font-size: 18pt;
+	text-align: inherit;
+}
+
+.flex-fill {
+	flex:1 1 auto;
+}
