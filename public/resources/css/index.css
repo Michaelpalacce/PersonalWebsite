@@ -14,7 +14,6 @@
 .name-text
 {
 	margin-top: 100px;
-	white-space: nowrap;
 	letter-spacing: 2px;
 	font-size: 24pt;
 	text-align: center;
@@ -28,7 +27,6 @@
 
 .profession-text
 {
-	white-space: nowrap;
 	margin-top: 10px;
 	font-size: 14pt;
 	text-align: center;

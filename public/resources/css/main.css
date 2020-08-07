@@ -4,9 +4,7 @@ body
 	background-color: #2b2b2b;
 }
 
-a {
-	text-decoration: none !important;
-}
+a { text-decoration: none !important; }
 
 .blinker
 {
@@ -31,7 +29,6 @@ a {
 .blue-text:hover { color: #0097db; }
 .red-text:hover { color: #fe2028; }
 
-.text-justify
-{
-	text-align: justify;
-}
+.text-no-wrap { white-space: nowrap; }
+
+.text-justify{ text-align: justify; }
