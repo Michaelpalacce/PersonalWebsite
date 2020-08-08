@@ -1,7 +1,13 @@
+.WIP
+{
+	color: white;
+	font-size: 14pt;
+	text-align: center;
+}
+
 .main-container
 {
 	margin-top: 10%;
-	min-width: 450px;
 	margin-bottom: 150px;
 }
 
@@ -15,27 +21,182 @@
 {
 	margin-top: 100px;
 	letter-spacing: 2px;
-	font-size: 24pt;
 	text-align: center;
 }
 
 .my-name-text
 {
-	font-size: 36pt;
 	text-align: center;
 }
 
 .profession-text
 {
 	margin-top: 10px;
-	font-size: 14pt;
 	text-align: center;
 }
 
 .my-profession-text
 {
-	font-size: 18pt;
 	text-align: inherit;
+}
+
+@media only screen and (min-width: 1200px) {
+	.name-text
+	{
+		font-size: 24pt;
+	}
+
+	.my-name-text
+	{
+		font-size: 36pt;
+	}
+
+	.profession-text
+	{
+		font-size: 14pt;
+	}
+
+	.my-profession-text
+	{
+		font-size: 18pt;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.name-text
+	{
+		font-size: 21pt;
+	}
+
+	.my-name-text
+	{
+		font-size: 40pt;
+	}
+
+	.profession-text
+	{
+		font-size: 14pt;
+	}
+
+	.my-profession-text
+	{
+		font-size: 20pt;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.name-text
+	{
+		font-size: 17pt;
+	}
+
+	.my-name-text
+	{
+		font-size: 26pt;
+	}
+
+	.profession-text
+	{
+		font-size: 12pt;
+	}
+
+	.my-profession-text
+	{
+		font-size: 16pt;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.hello-text
+	{
+		text-align: center;
+	}
+
+	.mobile{
+		display: block !important;
+	}
+
+	.not-mobile
+	{
+		display: none;
+	}
+
+	.name-text
+	{
+		letter-spacing: 0;
+		font-size: 18pt;
+	}
+
+	.my-name-text
+	{
+		font-size: 29pt;
+	}
+
+	.profession-text
+	{
+		font-size: 12pt;
+	}
+
+	.my-profession-text
+	{
+		font-size: 13pt;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.main-container
+	{
+		margin-bottom: 325px;
+	}
+
+	.mobile{
+		display: block !important;
+	}
+
+	.not-mobile
+	{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 535px) {
+	.main-container
+	{
+		min-width: 400px;
+		margin-bottom: 325px;
+		overflow-x: hidden;
+		overflow-y: hidden;
+	}
+
+	.mobile{
+		display: block !important;
+	}
+
+	.not-mobile
+	{
+		display: none;
+	}
+
+	.name-text
+	{
+		letter-spacing: 0;
+		font-size: 12pt;
+	}
+
+	.my-name-text
+	{
+		font-size: 25pt;
+	}
+
+	.profession-text
+	{
+		font-size: 9pt;
+	}
+
+	.my-profession-text
+	{
+		font-size: 10pt;
+	}
 }
 
 .flex-fill {

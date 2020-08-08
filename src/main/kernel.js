@@ -37,14 +37,14 @@ app.add(( event )=>{
 // Attach the cache server
 app.apply( app.er_data_server,				{ dataServerOptions: { persist: true } } );
 
-app.apply( app.er_rate_limits, {rules:
+app.apply( app.er_rate_limits, { rules:
 	[
 		{
 			"path": "",
 			"methods": [],
 			"maxAmount": 1000,
 			"refillTime": 1,
-			"refillAmount": 200,
+			"refillAmount": 1000,
 			"policy": "strict",
 			"ipLimit": false
 		}
@@ -58,9 +58,9 @@ app.apply( app.er_static_resources,			{ paths	: ['favicon.ico', process.env.STAT
 app.apply( app.er_logger,					{ logger } );
 
 // Parse body
-app.apply( app.er_body_parser_form );
-app.apply( app.er_body_parser_json );
-app.apply( app.er_body_parser_multipart,	{ tempDir	: path.join( PROJECT_ROOT, process.env.UPLOADS_DIR ) } );
-app.apply( app.er_body_parser_raw );
+// app.apply( app.er_body_parser_form );
+// app.apply( app.er_body_parser_json );
+// app.apply( app.er_body_parser_multipart,	{ tempDir	: path.join( PROJECT_ROOT, process.env.UPLOADS_DIR ) } );
+// app.apply( app.er_body_parser_raw );
 
 app.apply( app.er_timeout,					{ timeout	: process.env.REQUEST_TIMEOUT } );

@@ -8,6 +8,7 @@
 
 <body>
 	<%- include("partial/important-info") %>
+	<div class="WIP">This site is a work in progress!</div>
 	<main class="flex-fill container main-container">
 		<div class="row">
 			<div class="col">
@@ -15,9 +16,10 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col">
-				<div class="name-text text-no-wrap">
+		<div class="not-mobile">
+			<div class="row">
+				<div class="col">
+					<div class="name-text ">
 					<span class="blue-text">&lt;name&gt;
 						<span class="white-text">My name is
 							<span class="my-name-text">
@@ -26,13 +28,13 @@
 						</span>
 						&lt;/name&gt;
 					</span>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="row">
-			<div class="col">
-				<div class="profession-text text-no-wrap">
+			<div class="row">
+				<div class="col">
+					<div class="profession-text ">
 					<span class="orange-text">
 						&lt;profession&gt;
 						<span class="white-text my-profession-text">
@@ -40,6 +42,31 @@
 						</span>
 						&lt;/profession&gt;
 					</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mobile" style="display: none">
+			<div class="row">
+				<div class="col">
+					<div class="name-text ">
+						<span class="blue-text">&lt;name&gt;<span class="white-text my-name-text">Stefan Genov</span>&lt;/name&gt;</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="profession-text ">
+					<span class="orange-text">
+						&lt;profession&gt;
+						<span class="white-text my-profession-text">
+							Backend Dev & DevOps
+						</span>
+						&lt;/profession&gt;
+					</span>
+					</div>
 				</div>
 			</div>
 		</div>
