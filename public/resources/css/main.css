@@ -9,7 +9,7 @@ a { text-decoration: none !important; }
 .blinker
 {
 	display: inline-block;
-	animation: blink .75s step-end infinite;
+	animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
