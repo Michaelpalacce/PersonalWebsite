@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include("partial/stylesheets") %>
+	<link rel="stylesheet" type="text/css" href="/public/resources/css/projects.css" />
+	<title>Stefan's Site</title>
+</head>
+
+<body>
+	<%- include("partial/important-info") %>
+	<div class="WIP">This site is a work in progress!</div>
+	<main class="flex-fill container main-container">
+		<div class="row">
+			<div class="col">
+				<div class="orange-text page-title-text text-no-wrap">
+					<span class="typer" data-type-speed="125">Projects</span><span class="blinker">_</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="project-slider">
+			<div class="project active">
+				<div class="row project-title">
+					<div class="col">
+						<span class="blue-text">
+							&lt;title&gt;<span class="white-text project-title-text"> EventRequest </span>&lt;/title&gt;
+						</span>
+					</div>
+				</div>
+
+				<div class="row project-body">
+					<div class="col-md-5">
+						<div class="row">
+							<span class="white-text project-description">
+								EventRequest is a zero-dependency, extremely fast and highly customizable web framework built in NodeJS.
+								It offers a wide array of built in plugins and a wide sort of extendable components.
+								<br>
+								<br>
+								The project has a 100% test coverage and is actively maintained.
+								<br>
+								<br>
+								EventRequest supports NodeJS 12.x or newer.
+							</span>
+						</div>
+						<div class="row mt-4">
+							<div class="col-md-2 project-link">
+								<a href="https://www.npmjs.com/package/event_request"><img style="width: 100%;" src="/public/resources/imgs/npm-logo.png"></a>
+							</div>
+							<div class="col-md-2 project-link">
+								<a href="https://github.com/Michaelpalacce/EventRequest"><img style="width: 100%;" src="/public/resources/imgs/github-logo.png"></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7"><img class="project-picture" src="/public/resources/imgs/EventRequest-1.PNG"></div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<%- include("partial/footer") %>
+</body>
+<%- include("partial/js-libs") %>
+</html>

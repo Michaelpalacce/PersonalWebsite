@@ -1,0 +1,34 @@
+.project-title
+{
+    text-align: center;
+    font-size: 13pt;
+}
+
+.project-title-text
+{
+    font-size: 20pt;
+}
+
+.project-body
+{
+    margin-top: 50px;
+}
+
+.project-description
+{
+    text-align: center;
+}
+
+.project-picture
+{
+    width: 100%; height: auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.project-link
+{
+    width: 50px;
+    height: 50px;
+}
