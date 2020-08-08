@@ -12,3 +12,37 @@
 	bottom: 0;
 	background-color: #2b2b2b;
 }
+
+.main-container
+{
+	margin-top: 10%;
+	margin-bottom: 130px;
+	overflow: hidden;
+}
+
+.footer-row
+{
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 575px) {
+	.footer-row
+	{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.main-container
+	{
+		margin-bottom: 230px;
+	}
+}
+
+@media only screen and (max-width: 535px) {
+	.main-container
+	{
+		min-width: 400px;
+		margin-bottom: 230px;
+	}
+}
