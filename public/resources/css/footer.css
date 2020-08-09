@@ -25,6 +25,13 @@
 	margin-bottom: 50px;
 }
 
+@media only screen and (max-width: 682px) {
+	.main-container
+	{
+		margin-bottom: 180px;
+	}
+}
+
 @media only screen and (max-width: 575px) {
 	.footer-row
 	{
@@ -34,7 +41,7 @@
 
 	.main-container
 	{
-		margin-bottom: 230px;
+		margin-bottom: 280px;
 	}
 }
 
@@ -42,6 +49,6 @@
 	.main-container
 	{
 		min-width: 400px;
-		margin-bottom: 230px;
+		margin-bottom: 280px;
 	}
 }

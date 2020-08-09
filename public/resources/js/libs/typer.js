@@ -25,6 +25,7 @@ function type( { element, text, speed, i } = {} )
 $( '.typer' ).each(( index, element ) => {
 	setTimeout(()=>{
 		element		= $( element );
+		element.show();
 		const text	= element.text();
 		const speed	= element.attr( 'data-type-speed' ) || 125;
 		const i		= 0;

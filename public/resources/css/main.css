@@ -21,9 +21,19 @@ a { text-decoration: none !important; }
 	animation: blink 1s step-end infinite;
 }
 
+.typer
+{
+	display: none;
+}
+
 @keyframes blink {
 	from, to { opacity: 1 }
 	50% { opacity: 0; }
+}
+
+.offset-container
+{
+	margin-top: 5%;
 }
 
 .page-title-text
