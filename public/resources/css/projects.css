@@ -37,11 +37,6 @@
     height:auto;
 }
 
-.project-link
-{
-    width: 150px;
-}
-
 @media only screen and (max-width: 535px) {
     .project-title
     {

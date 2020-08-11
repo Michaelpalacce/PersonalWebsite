@@ -56,3 +56,4 @@ a { text-decoration: none !important; }
 
 .text-no-wrap { white-space: nowrap; }
 .text-justify{ text-align: justify; }
+.text-center{ text-align: center; }
