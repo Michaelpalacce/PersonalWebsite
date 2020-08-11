@@ -1,6 +1,7 @@
 .project
 {
     margin-top: 75px;
+    margin-bottom: 125px;
 }
 
 .project-title
@@ -24,12 +25,16 @@
     /*text-align: center;*/
 }
 
+.project-link
+{
+    height: 45px;
+    max-width: 100%;
+}
+
 .project-picture
 {
-    width: 100%; height: auto;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    max-width:100%;
+    height:auto;
 }
 
 .project-link
