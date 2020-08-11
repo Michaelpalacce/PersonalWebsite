@@ -21,19 +21,32 @@ a { text-decoration: none !important; }
 	animation: blink 1s step-end infinite;
 }
 
+.blinker-end
+{
+	opacity: 0;
+	display: inline-block;
+	animation: blink .75s step-end 2;
+}
+
 .typer
 {
 	display: none;
 }
 
 @keyframes blink {
-	from, to { opacity: 1 }
-	50% { opacity: 0; }
+	from, to { opacity: 0 }
+	50% { opacity: 1; }
 }
 
 .offset-container
 {
 	margin-top: 5%;
+}
+
+.copyer
+{
+	cursor: pointer;
+	border: 1px solid transparent;
 }
 
 .page-title-text
