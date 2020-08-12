@@ -88,3 +88,21 @@ a { text-decoration: none !important; }
 {
 	background: #888;
 }
+
+.carousel .carousel-control-prev { visibility: hidden; }
+.carousel:hover .carousel-control-prev { visibility: visible; }
+
+.carousel .carousel-control-next { visibility: hidden; }
+.carousel:hover .carousel-control-next { visibility: visible; }
+
+.carousel-control-next-icon {
+	position: absolute;
+	/*bottom: 25px;*/
+	right: 0;
+}
+
+.carousel-control-prev-icon {
+	position: absolute;
+	/*bottom: 25px;*/
+	left: 0;
+}
