@@ -52,7 +52,7 @@ app.apply( app.er_rate_limits, { rules:
 });
 
 // Serve Static Resources
-app.apply( app.er_static_resources,			{ paths	: ['favicon.ico', process.env.STATIC_RESOURCES] } );
+app.apply( app.er_static,					{ paths	: [process.env.STATIC_RESOURCES] } );
 
 // Add a logger
 app.apply( app.er_logger,					{ logger } );
