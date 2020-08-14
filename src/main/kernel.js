@@ -82,7 +82,7 @@ app.apply( app.er_body_parser_raw );
 
 app.apply( app.er_timeout,		{ timeout	: process.env.REQUEST_TIMEOUT } );
 
-app.apply( app.er_session );
+app.apply( app.er_session, { sessionKey: 'er_sid' } );
 
 app.add( async ( event ) => {
 	await event.initSession();
