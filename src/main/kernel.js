@@ -52,7 +52,9 @@ app.apply( app.er_rate_limits, { rules:
 });
 
 // Serve Static Resources
-app.apply( app.er_static,					{ paths	: [process.env.STATIC_RESOURCES] } );
+app.apply( app.er_static,					{ paths	: ['public/resources/imgs'] } );
+app.apply( app.er_static,					{ paths	: ['public/resources/js', 'public/resources/css'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 120 } } } );
+app.apply( app.er_cache,					{ cacheControl: 'public', expirationDirectives: { 'max-age': 60 } } );
 
 // Add a logger
 app.apply( app.er_logger,					{ logger } );
