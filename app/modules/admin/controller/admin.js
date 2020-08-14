@@ -27,7 +27,6 @@ adminRouter.post(
 	async ( event ) => {
 		const { username, password }	= event.body;
 
-		console.log( { username, password } );
 		if ( username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD )
 		{
 			event.session.add( 'authenticated', true );
