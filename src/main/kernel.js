@@ -35,9 +35,9 @@ app.add(( event )=>{
 });
 
 // Attach the cache server
-app.apply( app.er_data_server,				{ dataServerOptions: { persist: true } } );
+app.apply( app.er_data_server,	{ dataServerOptions: { persist: true } } );
 
-app.apply( app.er_rate_limits, { rules:
+app.apply( app.er_rate_limits,	{ rules:
 	[
 		{
 			"path": "",
@@ -52,18 +52,16 @@ app.apply( app.er_rate_limits, { rules:
 });
 
 // Serve Static Resources
-app.apply( app.er_static,					{ paths	: ['public/resources/imgs'] } );
-app.apply( app.er_static,					{ paths	: ['public/resources/js', 'public/resources/css'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 120 } } } );
-app.apply( app.er_cache,					{ cacheControl: 'public', expirationDirectives: { 'max-age': 60 } } );
+app.apply( app.er_static,		{ paths	: ['assets'] } );
+app.apply( app.er_static,		{ paths	: ['public/resources/imgs'] } );
+app.apply( app.er_static,		{ paths	: ['public/resources/js', 'public/resources/css'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 120 } } } );
 
 // Add a logger
-app.apply( app.er_logger,					{ logger } );
+app.apply( app.er_logger,		{ logger } );
 
-app.apply( app.er_cors,						{
-	origin	: 'https://stefangenov.site'
-});
+app.apply( app.er_cors,			{ origin : 'https://stefangenov.site' } );
 
-app.apply( app.er_security, {
+app.apply( app.er_security,		{
 	csp		: {
 		directives	: {
 			'script-src'	: ['https://stackpath.bootstrapcdn.com', 'https://code.jquery.com'],
@@ -78,9 +76,15 @@ app.apply( app.er_security, {
 });
 
 // Parse body
-// app.apply( app.er_body_parser_form );
-// app.apply( app.er_body_parser_json );
-// app.apply( app.er_body_parser_multipart,	{ tempDir	: path.join( PROJECT_ROOT, process.env.UPLOADS_DIR ) } );
-// app.apply( app.er_body_parser_raw );
+app.apply( app.er_body_parser_form );
+app.apply( app.er_body_parser_json );
+app.apply( app.er_body_parser_raw );
 
-app.apply( app.er_timeout,					{ timeout	: process.env.REQUEST_TIMEOUT } );
+app.apply( app.er_timeout,		{ timeout	: process.env.REQUEST_TIMEOUT } );
+
+app.apply( app.er_session );
+
+app.add( async ( event ) => {
+	await event.initSession();
+	event.next();
+});

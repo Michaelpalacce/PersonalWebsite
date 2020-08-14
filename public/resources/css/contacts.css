@@ -3,3 +3,18 @@
 	height: 45px;
 	max-width: 100%;
 }
+
+.contact-text
+{
+	margin-top: 15px;
+}
+
+.email-text
+{
+	font-size: 25px;
+}
+
+.email-holder
+{
+	margin-top: 100px;
+}

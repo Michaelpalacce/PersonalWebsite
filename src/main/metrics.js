@@ -1,3 +1,5 @@
+// Unscuff this
+
 const path				= require( 'path' );
 const crypto			= require( 'crypto' );
 const os				= require( 'os' );
@@ -28,6 +30,8 @@ app.add( async ( event ) => {
 		await dataServer.increment( totalVisitorsKey, 1 );
 		uniqueVisitors.inc();
 	}
+
+	event.extra.metricsDataServer	= dataServer;
 
 	event.next();
 });

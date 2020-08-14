@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include("../partial/stylesheets") %>
+	<link rel="stylesheet" type="text/css" href="/public/resources/css/admin/main.css" />
+	<link rel="stylesheet" type="text/css" href="/public/resources/css/admin/dashboard.css" />
+	<title>Admin Dashboard</title>
+</head>
+
+<body>
+<%- include("../partial/important-info") %>
+	<main class="flex-fill container main-container offset-container">
+		<div class="row">
+			<div class="col">
+				<div class="blue-text page-title-text text-no-wrap">
+					<span class="typer" data-type-speed="125">Dashboard</span><span class="blinker">_</span>
+				</div>
+			</div>
+		</div>
+
+		<h4 class="white-text mt-5">Stats:</h4>
+		<div class="row mt-3">
+			<div class="col-sm">
+				<span class="white-text ts-18">Unique Visitors:<span class="orange-text" id="unique-visitors-placeholder"></span></span>
+			</div>
+		</div>
+
+		<h4 class="white-text mt-5">Node Process:</h4>
+		<div class="row mt-3">
+			<div class="col">
+				<span class="white-text ts-18">Heap Used:<span class="orange-text" id="heap-used-placeholder"></span></span>
+			</div>
+			<div class="col">
+				<span class="white-text ts-18">Memory:<span class="orange-text" id="heap-rss-placeholder"></span></span>
+			</div>
+		</div>
+
+		<h4 class="white-text mt-5">OS:</h4>
+		<div class="row mt-3">
+			<div class="col">
+				<span class="white-text ts-18">Free Memory:<span class="orange-text" id="os-freemem-placeholder"></span></span>
+			</div>
+		</div>
+
+		<h4 class="white-text mt-5">Actions:</h4>
+		<div class="row mt-3">
+			<div class="col">
+				<a class="btn btn-dark" href="https://stefangenov.site:8000" role="button">Server</a>
+			</div>
+			<div class="col">
+				<a class="btn btn-dark" href="https://stefangenov.site:8000/terminal" role="button">Terminal</a>
+			</div>
+			<div class="col">
+				<a class="btn btn-dark" href="/admin/logout" role="button">Logout</a>
+			</div>
+		</div>
+	</main>
+<%- include("../partial/footer") %>
+</body>
+<%- include("../partial/js-libs") %>
+<script src="/public/resources/js/admin/dashboard.js"></script>
+</html>

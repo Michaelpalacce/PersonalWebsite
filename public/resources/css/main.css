@@ -111,3 +111,12 @@ a { text-decoration: none !important; }
 	/*bottom: 25px;*/
 	left: 0;
 }
+
+.ts-40 { font-size: 40pt }
+.ts-36 { font-size: 36pt }
+.ts-32 { font-size: 32pt }
+.ts-28 { font-size: 28pt }
+.ts-26 { font-size: 26pt }
+.ts-18 { font-size: 18pt }
+.ts-16 { font-size: 16pt }
+.ts-14 { font-size: 14pt }

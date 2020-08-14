@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partial/stylesheets") %>
+    <link rel="stylesheet" type="text/css" href="public/resources/css/admin_login.css" />
+    <title>Admin Login</title>
+</head>
+<body>
+<main class="flex-fill container main-container offset-container">
+    <div class="row">
+        <div class="col">
+            <div class="blue-text page-title-text text-no-wrap">
+                <span class="typer" data-type-speed="125">Login</span><span class="blinker">_</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div id="formContent">
+            <form role="form" action="/admin/login" method="POST" enctype="application/x-www-form-urlencoded" >
+                <input type="text" id="username" name="username" placeholder="username">
+                <input type="password" id="password" name="password" placeholder="password">
+                <input type="submit" value="Log In">
+            </form>
+        </div>
+    </div>
+</main>
+<%- include("../partial/footer") %>
+</body>
+<%- include("../partial/js-libs") %>
+</html>

@@ -1,14 +1,28 @@
-const app				= require( 'event_request' )();
-const homeRouter		= require( './home/controller/home' );
-const projectsRouter	= require( './home/controller/projects' );
-const blogRouter		= require( './home/controller/blog' );
-const aboutMeRouter		= require( './home/controller/about_me' );
-const contactsRouter	= require( './home/controller/contacts' );
-const adminRouter		= require( './admin/controller/admin' );
+const app			= require( 'event_request' )();
+const adminRouter	= require( './admin/controller/admin' );
 
-app.add( '/', homeRouter );
-app.add( '/Blog', blogRouter );
-app.add( '/About', aboutMeRouter );
-app.add( '/Projects', projectsRouter );
-app.add( '/Contacts', contactsRouter );
+app.get( '/', async ( event ) => {
+	await event.render( 'index.ejs', { authenticated: event.session.get( 'authenticated' ) } );
+});
+
+app.get( '/Blog', async ( event ) => {
+	await event.render( 'blog.ejs', { authenticated: event.session.get( 'authenticated' ) } );
+});
+
+app.get( '/About', async ( event ) => {
+	await event.render( 'about_me.ejs', { authenticated: event.session.get( 'authenticated' ) } );
+});
+
+app.get( '/Projects', async ( event ) => {
+	await event.render( 'projects.ejs', { authenticated: event.session.get( 'authenticated' ) } );
+});
+
+app.get( '/Contacts', async ( event ) => {
+	await event.render( 'contacts.ejs', { authenticated: event.session.get( 'authenticated' ) } );
+});
+
 app.add( '/admin', adminRouter );
+
+app.get( '/admin/dashboard', ( event ) => {
+	event.render( 'admin/dashboard.ejs', { authenticated: event.session.get( 'authenticated' ) } );
+});

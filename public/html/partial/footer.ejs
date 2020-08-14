@@ -30,6 +30,16 @@
 					</a>
 				</div>
 			</div>
+
+			<% if ( typeof authenticated !== 'undefined' && authenticated === true ) { %>
+				<div class="col-sm mt-3">
+					<div>
+						<a class="blue-text text-no-wrap" href="/admin/dashboard">
+							<span class="typer">Dashboard</span><span class="blinker-end">_</span>
+						</a>
+					</div>
+				</div>
+			<% } %>
 		</div>
 	</div>
 </footer>
