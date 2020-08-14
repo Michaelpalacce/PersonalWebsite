@@ -12,6 +12,11 @@ body {
 
 a { text-decoration: none !important; }
 
+.mobile
+{
+	display: none;
+}
+
 .blinker
 {
 	display: inline-block;

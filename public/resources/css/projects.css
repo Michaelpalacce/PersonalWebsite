@@ -39,4 +39,7 @@
     }
 }
 
-
+#fsCarousel .project-picture
+{
+    height: 350px;
+}

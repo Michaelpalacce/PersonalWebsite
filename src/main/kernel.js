@@ -59,6 +59,24 @@ app.apply( app.er_cache,					{ cacheControl: 'public', expirationDirectives: { '
 // Add a logger
 app.apply( app.er_logger,					{ logger } );
 
+app.apply( app.er_cors,						{
+	origin	: 'https://stefangenov.site'
+});
+
+app.apply( app.er_security, {
+	csp		: {
+		directives	: {
+			'script-src'	: ['https://stackpath.bootstrapcdn.com', 'https://code.jquery.com'],
+			'style-src'		: ['https://stackpath.bootstrapcdn.com'],
+			'img-src'		: ['data:'],
+		}
+	},
+	hsts	: {
+		includeSubDomains	: false,
+		preload				: true,
+	}
+});
+
 // Parse body
 // app.apply( app.er_body_parser_form );
 // app.apply( app.er_body_parser_json );
