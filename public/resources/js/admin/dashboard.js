@@ -19,9 +19,15 @@ function getData( url )
 	})
 }
 
+/**
+ * @brief	Converts bytes to MB
+ * @param	{Number} number
+ *
+ * @return	String
+ */
 function convertToMb( number )
 {
-	return ( parseInt( number ) / 1024 / 1024 ).toFixed( 2 )
+	return `${( parseInt( number ) / 1024 / 1024 ).toFixed( 2 )}MB`
 }
 
 /**
@@ -31,17 +37,19 @@ function convertToMb( number )
  */
 async function refreshStats()
 {
-	$( '#unique-visitors-placeholder' ).text( await getData( '/api/v1/visitors/unique' ) );
-	$( '#visitors-path-home' ).text( await getData( '/api/v1/visitors/path?path=%2F' ) );
-	$( '#visitors-path-projects' ).text( await getData( '/api/v1/visitors/path?path=%2FProjects' ) );
-	$( '#visitors-path-blog' ).text( await getData( '/api/v1/visitors/path?path=%2FBlog' ) );
-	$( '#visitors-path-about' ).text( await getData( '/api/v1/visitors/path?path=%2FAbout' ) );
-	$( '#visitors-path-contacts' ).text( await getData( '/api/v1/visitors/path?path=%2FContacts' ) );
-	$( '#visitors-path-c3' ).text( await getData( '/api/v1/visitors/path?path=%2Fc3' ) );
-	$( '#visitors-path-admin' ).text( await getData( '/api/v1/visitors/path?path=%2Fadmin' ) );
-	$( '#heap-used-placeholder' ).text( `${convertToMb( await getData( '/api/v1/memory/heapUsed' ) )}MB` );
-	$( '#heap-rss-placeholder' ).text( `${convertToMb( await getData( '/api/v1/memory/rss' ) )}MB` );
-	$( '#os-freemem-placeholder' ).text( `${convertToMb( await getData( '/api/v1/os/freemem' ) )}MB` );
+	const stats	= JSON.parse( await getData( '/api/v1/stats/all' ) );
+
+	$( '#unique-visitors-placeholder' ).text( stats.uniqueVisitors );
+	$( '#visitors-path-home' ).text( stats.homeVisitors );
+	$( '#visitors-path-projects' ).text( stats.projectsVisitors );
+	$( '#visitors-path-blog' ).text( stats.blogVisitors );
+	$( '#visitors-path-about' ).text( stats.aboutVisitors );
+	$( '#visitors-path-contacts' ).text( stats.contactsVisitors );
+	$( '#visitors-path-c3' ).text( stats.c3Visitors );
+	$( '#visitors-path-admin' ).text( stats.adminVisitors );
+	$( '#heap-used-placeholder' ).text( convertToMb( stats.heapUsed ) );
+	$( '#heap-rss-placeholder' ).text( convertToMb( stats.rss ) );
+	$( '#os-freemem-placeholder' ).text( convertToMb( stats.freemem ) );
 }
 
 setInterval(() => {
