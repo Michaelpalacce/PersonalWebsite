@@ -35,7 +35,12 @@
 {
     .project-title
     {
-        font-size: 12pt;
+        font-size: 10pt;
+    }
+
+    .project-title-text
+    {
+        font-size: 16pt;
     }
 }
 
