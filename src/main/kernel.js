@@ -42,11 +42,19 @@ app.apply( app.er_rate_limits,	{ rules:
 		{
 			"path": "",
 			"methods": [],
-			"maxAmount": 1000,
-			"refillTime": 1,
-			"refillAmount": 1000,
+			"maxAmount": 2000,
+			"refillTime": 5,
+			"refillAmount": 2000,
+			"policy": "strict"
+		},
+		{
+			"path": "/c3/login",
+			"methods": ['POST'],
+			"maxAmount": 5,
+			"refillTime": 60,
+			"refillAmount": 1,
 			"policy": "strict",
-			"ipLimit": false
+			'ipLimit': true
 		}
 	]
 });
