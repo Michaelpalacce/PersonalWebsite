@@ -32,6 +32,13 @@ function convertToMb( number )
 async function refreshStats()
 {
 	$( '#unique-visitors-placeholder' ).text( await getData( '/api/v1/visitors/unique' ) );
+	$( '#visitors-path-home' ).text( await getData( '/api/v1/visitors/path?path=%2F' ) );
+	$( '#visitors-path-projects' ).text( await getData( '/api/v1/visitors/path?path=%2FProjects' ) );
+	$( '#visitors-path-blog' ).text( await getData( '/api/v1/visitors/path?path=%2FBlog' ) );
+	$( '#visitors-path-about' ).text( await getData( '/api/v1/visitors/path?path=%2FAbout' ) );
+	$( '#visitors-path-contacts' ).text( await getData( '/api/v1/visitors/path?path=%2FContacts' ) );
+	$( '#visitors-path-c3' ).text( await getData( '/api/v1/visitors/path?path=%2Fc3' ) );
+	$( '#visitors-path-admin' ).text( await getData( '/api/v1/visitors/path?path=%2Fadmin' ) );
 	$( '#heap-used-placeholder' ).text( `${convertToMb( await getData( '/api/v1/memory/heapUsed' ) )}MB` );
 	$( '#heap-rss-placeholder' ).text( `${convertToMb( await getData( '/api/v1/memory/rss' ) )}MB` );
 	$( '#os-freemem-placeholder' ).text( `${convertToMb( await getData( '/api/v1/os/freemem' ) )}MB` );

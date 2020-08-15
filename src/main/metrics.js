@@ -1,39 +1,49 @@
 // Unscuff this
 
 const path				= require( 'path' );
-const crypto			= require( 'crypto' );
 const os				= require( 'os' );
-const io				= require( '@pm2/io' );
 const app				= require( 'event_request' )();
 const DataServerMap		= require( 'event_request/server/components/caching/data_server_map' );
 
-const dataServer		= new DataServerMap( { ttl: -1, useBigMap: true, persistInterval: 5, persist: true, persistPath: path.join( os.tmpdir(), 'uniqueVisitors' ) } );
-const uniqueVisitors	= io.counter( { name: 'Realtime unique visitors', id: 'app/realtime/unique-visitors' } );
-const totalVisitorsKey	= 'totalVisitors';
+const metricsDataServer	= new DataServerMap({
+	ttl: -1,
+	useBigMap: true,
+	persistInterval: 5,
+	persist: true,
+	persistPath: path.join( os.tmpdir(), '.stefangenov.site.metrics' )
+});
 
+const metrics			= {
+	uniqueVisitors	: require( './metrics/unique_visitors_metric' )( metricsDataServer ),
+	paths			: require( './metrics/paths_metric' )( metricsDataServer )
+};
+
+/**
+ * @brief	Initializes the metrics
+ *
+ * @return	Promise
+ */
 async function initMetrics()
 {
-	if ( await dataServer.get( totalVisitorsKey ) === null )
-		await dataServer.set( totalVisitorsKey, 0 );
+	for ( const index in metrics )
+	{
+		const metric	= metrics[index];
 
-	uniqueVisitors.inc( await dataServer.get( totalVisitorsKey ) );
+		await metric.startUp();
+	}
 }
+initMetrics();
 
 app.add( async ( event ) => {
-	const md5Sum	= crypto.createHash( 'md5' );
-	md5Sum.update( event.clientIp );
-	const result	= md5Sum.digest( 'utf8' );
-
-	if ( await dataServer.get( result ) === null )
+	for ( const index in metrics )
 	{
-		await dataServer.set( result, '0' );
-		await dataServer.increment( totalVisitorsKey, 1 );
-		uniqueVisitors.inc();
+		const metric	= metrics[index];
+
+		await metric.callback( event );
 	}
 
-	event.extra.metricsDataServer	= dataServer;
+	event.extra.metrics	= metrics;
 
 	event.next();
 });
 
-initMetrics();
