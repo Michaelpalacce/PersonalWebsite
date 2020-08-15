@@ -21,8 +21,4 @@ app.get( '/Contacts', async ( event ) => {
 	await event.render( 'contacts.ejs', { authenticated: event.session.get( 'authenticated' ) } );
 });
 
-app.add( '/admin', adminRouter );
-
-app.get( '/admin/dashboard', ( event ) => {
-	event.render( 'admin/dashboard.ejs', { authenticated: event.session.get( 'authenticated' ) } );
-});
+app.add( '/c3', adminRouter );

@@ -1,49 +1,61 @@
+.nav-line
+{
+	border-bottom: 1px solid gray;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
 .footer a{
-	font-size: 18pt;
+	font-size: 20pt;
 }
 
 .footer
 {
 	position: fixed;
 	left: 0;
-	right: 0;
-	z-index: 2000;
+	z-index: 100;
 	width: 100%;
 	bottom: 0;
 	background-color: #2b2b2b;
+	padding-bottom: 50px;
+	padding-top: 0;
+}
+
+.footer .navbar-brand
+{
+	width: 84%;
+	display: none;
+}
+
+.footer .navbar-toggler
+{
+	border-color: rgba(255,255,255,.1);
+	color: rgba(255,255,255,.1);
+}
+
+.footer .navbar-toggler-icon
+{
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.footer-col
+{
+	margin-top: 25px;
+	margin-bottom: 0;
 }
 
 .main-container
 {
-	margin-bottom: 130px;
-	overflow: hidden;
-}
-
-.footer-row
-{
-	margin-top: 25px;
-	margin-bottom: 50px;
-}
-
-@media only screen and ( max-width: 682px )
-{
-	.main-container
-	{
-		margin-bottom: 180px;
-	}
+	margin-bottom: 180px;
 }
 
 @media only screen and ( max-width: 575px )
 {
-	.footer-row
+	.footer-col
 	{
 		margin-top: 10px;
 		margin-bottom: 10px;
-	}
-
-	.main-container
-	{
-		margin-bottom: 280px;
 	}
 }
 
@@ -52,6 +64,29 @@
 	.main-container
 	{
 		min-width: 400px;
-		margin-bottom: 280px;
+	}
+
+	.footer .navbar-brand
+	{
+		width: 80%;
+	}
+}
+
+@media only screen and ( max-width: 767px )
+{
+	.main-container
+	{
+		min-width: 400px;
+		margin-bottom: 60px;
+	}
+
+	.footer
+	{
+		padding-bottom: 0;
+	}
+
+	.footer .navbar-brand
+	{
+		display: inline-block;
 	}
 }

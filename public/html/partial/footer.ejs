@@ -1,45 +1,56 @@
-<footer class="footer">
-	<div class="container-fluid text-center">
-		<div class="row footer-row">
-			<div class="col-sm mt-3"><div><a class="white-text text-no-wrap" href="/"><span class="typer">Home</span><span class="blinker-end">_</span></a></div></div>
-			<div class="col-sm mt-3">
-				<div>
-					<a class="orange-text text-no-wrap" href="/Projects">
-						<span class="typer">Projects</span><span class="blinker-end">_</span>
-					</a>
-				</div>
-			</div>
-			<div class="col-sm mt-3">
-				<div>
-					<a class="green-text text-no-wrap" href="/Blog">
-						<span class="typer">Blog</span><span class="blinker-end">_</span>
-					</a>
-				</div>
-			</div>
-			<div class="col-sm mt-3">
-				<div>
-					<a class="blue-text text-no-wrap" href="/About">
-						<span class="typer">About Me</span><span class="blinker-end">_</span>
-					</a>
-				</div>
-			</div>
-			<div class="col-sm mt-3">
-				<div>
-					<a class="red-text text-no-wrap" href="/Contacts">
-						<span class="typer">Contacts</span><span class="blinker-end">_</span>
-					</a>
-				</div>
-			</div>
+<footer class="footer navbar navbar-expand-md navbar-dark fluid-container">
+	<a class="orange-text text-no-wrap navbar-brand" href="#" data-toggle="collapse" data-target="#footerNavbar">
+		<span class="typer">Navigation</span><span class="blinker-end">_</span>
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavbar" >
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-			<% if ( typeof authenticated !== 'undefined' && authenticated === true ) { %>
-				<div class="col-sm mt-3">
-					<div>
-						<a class="blue-text text-no-wrap" href="/admin/dashboard">
-							<span class="typer">Dashboard</span><span class="blinker-end">_</span>
-						</a>
-					</div>
-				</div>
-			<% } %>
+	<div class="collapse navbar-collapse text-center row" id="footerNavbar">
+		<div class="col-md footer-col">
+			<div>
+				<a class="white-text text-no-wrap" href="/">
+					<span class="typer">Home</span><span class="blinker-end">_</span>
+				</a>
+			</div>
 		</div>
+		<div class="col-md footer-col">
+			<div>
+				<a class="orange-text text-no-wrap" href="/Projects">
+					<span class="typer">Projects</span><span class="blinker-end">_</span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md footer-col">
+			<div>
+				<a class="green-text text-no-wrap" href="/Blog">
+					<span class="typer">Blog</span><span class="blinker-end">_</span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md footer-col">
+			<div>
+				<a class="blue-text text-no-wrap" href="/About">
+					<span class="typer">About Me</span><span class="blinker-end">_</span>
+				</a>
+			</div>
+		</div>
+		<div class="col-md footer-col">
+			<div>
+				<a class="red-text text-no-wrap" href="/Contacts">
+					<span class="typer">Contacts</span><span class="blinker-end">_</span>
+				</a>
+			</div>
+		</div>
+
+		<% if ( typeof authenticated !== 'undefined' && authenticated === true ) { %>
+			<div class="col-md footer-col">
+				<div>
+					<a class="blue-text text-no-wrap" href="/c3/dashboard">
+						<span class="typer">Dashboard</span><span class="blinker-end">_</span>
+					</a>
+				</div>
+			</div>
+		<% } %>
 	</div>
 </footer>

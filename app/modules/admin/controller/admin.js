@@ -4,14 +4,14 @@ const adminRouter	= app.Router();
 adminRouter.add({
 	route	: new RegExp( /.*/ ),
 	handler	: async ( event ) => {
-		if ( app.router.matchRoute( event.path, '/admin' ) || app.router.matchRoute( event.path, '/admin/login' ) )
+		if ( app.router.matchRoute( event.path, '/c3' ) || app.router.matchRoute( event.path, '/c3/login' ) )
 			if ( event.session.get( 'authenticated' ) !== true )
 				return event.next();
 			else
-				return event.redirect( '/admin/dashboard' );
+				return event.redirect( '/c3/dashboard' );
 
 		if ( event.session.get( 'authenticated' ) !== true )
-			return event.redirect( '/admin' );
+			return event.redirect( '/c3' );
 
 		event.next();
 	}
@@ -23,24 +23,28 @@ adminRouter.get( '/', async ( event ) => {
 
 adminRouter.post(
 	'/login',
-	app.er_validation.validate( { body: { username : 'filled||string', password : 'filled||string' } }, event => event.redirect( '/admin' ) ),
+	app.er_validation.validate( { body: { username : 'filled||string', password : 'filled||string' } }, event => event.redirect( '/c3' ) ),
 	async ( event ) => {
 		const { username, password }	= event.body;
 
 		if ( username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD )
 		{
 			event.session.add( 'authenticated', true );
-			return event.redirect( '/admin/dashboard' );
+			return event.redirect( '/c3/dashboard' );
 		}
 
-		return event.redirect( '/admin' );
+		return event.redirect( '/c3' );
 	}
 );
 
 adminRouter.get( '/logout', async ( event ) => {
 	await event.session.removeSession();
 
-	return event.redirect( '/admin' );
+	return event.redirect( '/c3' );
+});
+
+adminRouter.get( '/dashboard', ( event ) => {
+	event.render( 'admin/dashboard.ejs', { authenticated: event.session.get( 'authenticated' ) } );
 });
 
 module.exports	= adminRouter;
