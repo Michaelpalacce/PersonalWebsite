@@ -23,13 +23,6 @@
 		</div>
 		<div class="col-md footer-col">
 			<div>
-				<a class="green-text text-no-wrap" href="/Blog">
-					<span class="typer">Blog</span><span class="blinker-end">_</span>
-				</a>
-			</div>
-		</div>
-		<div class="col-md footer-col">
-			<div>
 				<a class="blue-text text-no-wrap" href="/About">
 					<span class="typer">About Me</span><span class="blinker-end">_</span>
 				</a>
@@ -44,6 +37,13 @@
 		</div>
 
 		<% if ( typeof authenticated !== 'undefined' && authenticated === true ) { %>
+			<div class="col-md footer-col">
+				<div>
+					<a class="green-text text-no-wrap" href="/Blog">
+						<span class="typer">Blog</span><span class="blinker-end">_</span>
+					</a>
+				</div>
+			</div>
 			<div class="col-md footer-col">
 				<div>
 					<a class="blue-text text-no-wrap" href="/c3/dashboard">
