@@ -112,15 +112,16 @@ a { text-decoration: none !important; }
 	left: 0;
 }
 
-.ts-40 { font-size: 40pt }
-.ts-36 { font-size: 36pt }
-.ts-32 { font-size: 32pt }
-.ts-28 { font-size: 28pt }
-.ts-26 { font-size: 26pt }
-.ts-24 { font-size: 24pt }
-.ts-22 { font-size: 22pt }
-.ts-18 { font-size: 18pt }
-.ts-16 { font-size: 16pt }
-.ts-14 { font-size: 14pt }
-.ts-12 { font-size: 12pt }
-.ts-10 { font-size: 10pt }
+.ts-40 { font-size: 40pt !important;}
+.ts-36 { font-size: 36pt !important;}
+.ts-32 { font-size: 32pt !important;}
+.ts-28 { font-size: 28pt !important;}
+.ts-26 { font-size: 26pt !important;}
+.ts-24 { font-size: 24pt !important;}
+.ts-22 { font-size: 22pt !important;}
+.ts-18 { font-size: 18pt !important;}
+.ts-16 { font-size: 16pt !important;}
+.ts-14 { font-size: 14pt !important;}
+.ts-12 { font-size: 12pt !important;}
+.ts-10 { font-size: 10pt !important;}
+.ts-8 { font-size: 8pt !important;}
