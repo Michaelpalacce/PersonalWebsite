@@ -5,8 +5,6 @@ const app			= require( 'event_request' )();
 const ejs			= require( 'ejs' );
 const path			= require( 'path' );
 
-require( './mongoose/schemas' );
-
 const errorHandler	= require( './error/error_handler' );
 const logger		= require( './logging/logger' );
 const PROJECT_ROOT	= path.parse( require.main.filename ).dir;
