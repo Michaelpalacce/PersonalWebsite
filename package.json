@@ -4,7 +4,8 @@
   "description": "Stefan Genov's personal website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "start-dev": "nodemon -L index.js"
   },
   "author": "Stefan Genov",
   "license": "ISC",
@@ -13,5 +14,8 @@
     "ejs": "^3.1.3",
     "event_request": "^29.1.1",
     "os-utils": "0.0.14"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
