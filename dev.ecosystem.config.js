@@ -3,9 +3,10 @@ module.exports = {
     {
       script: 'index.js',
       watch: true,
-      ignore_watch : ["node_modules", "public", "cache", "logs", "*.log", "*.json", "*.tmp", ".idea", ".git"],
+      ignore_watch : ["node_modules", "cache", "logs", "*.log", "*.json", "*.tmp", ".idea", ".git"],
       watch_options: {
-        "followSymlinks": false
+        followSymlinks: false,
+        usePolling: true
       }
     }
   ]

@@ -7,4 +7,3 @@ logs/*
 
 .env
 cache
-package-lock.json

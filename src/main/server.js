@@ -15,7 +15,7 @@ if ( process.env.ENV === 'prod' )
 		app.attach()
 	);
 
-	const redirectApp		= new Server();
+	const redirectApp	= new Server();
 
 	redirectApp.add(( event ) => {
 		event.logger = {};

@@ -1,14 +1,22 @@
-version: '3'
-
+version: '3.8'
 services:
+#    Provision the app before starting it only for dev env
+    provision:
+        image: node:14-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        entrypoint: ["npm", "i"]
+
     app:
         build:
             context: .
             dockerfile: Dockerfile
+            target: dev
+
         volumes:
-            - ./:/usr/src/app
-            - /usr/src/app/node_modules
+            - .:/app
         ports:
             - "80:80"
-        restart: on-failure
-        command: npm run start-dev
+        working_dir: /app
+        entrypoint: ["pm2-runtime", "start", "dev.ecosystem.config.js"]
