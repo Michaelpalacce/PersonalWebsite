@@ -1,6 +1,7 @@
 .project
 {
     margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .project-title
@@ -46,4 +47,9 @@
 #fsCarousel .project-picture
 {
     height: 350px;
+}
+
+.simple-white-border
+{
+    border: #ffffff 1px solid;
 }

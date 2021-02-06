@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-#    Provision the app before starting it only for dev env
+#   Provision the app before starting it only for dev env
     provision:
         image: node:14-alpine
         volumes:
@@ -8,6 +8,7 @@ services:
         working_dir: /app
         entrypoint: ["npm", "i"]
 
+#   docker-compose up app ( after build )
     app:
         build:
             context: .
