@@ -5,7 +5,7 @@ module.exports	=
 		{
 			script: 'index.js',
 			watch: false,
-			max_memory_restart: '250M',
+			max_memory_restart: '200M',
 			exp_backoff_restart_delay: 100
 		}
 	]

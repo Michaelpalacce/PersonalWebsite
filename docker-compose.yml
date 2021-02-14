@@ -33,36 +33,3 @@ services:
         working_dir: /app
 
         entrypoint: ["pm2-runtime", "start", "dev.ecosystem.config.js"]
-
-#   docker-compose up app -d
-    app:
-        build:
-            context: .
-            dockerfile: Dockerfile
-            target: prod
-
-#       Make sure to specify the missing env variables in prod
-        environment:
-            - REQUEST_TIMEOUT=60000
-            - TEMPLATES_DIR=public/html
-            - ENV=prod
-            - SSL_KEY_PATH=/etc/letsencrypt/live/stefangenov.site-0001/privkey.pem
-            - SSL_CERT_PATH=/etc/letsencrypt/live/stefangenov.site-0001/cert.pem
-            - ADMIN_USERNAME=
-            - ADMIN_PASSWORD=
-            - PM2_PUBLIC_KEY=
-            - PM2_SECRET_KEY=
-
-        ports:
-            - "80:80" # For the redirect server
-            - "443:443" # For the website
-
-        volumes:
-            - /etc/letsencrypt/live/stefangenov.site-0001/:/etc/letsencrypt/live/stefangenov.site-0001/ # SSL certificate
-            - /tmp:/tmp # metrics
-
-        restart: unless-stopped
-
-        working_dir: /app
-
-        entrypoint: ["pm2-runtime", "start", "ecosystem.config.js"]
