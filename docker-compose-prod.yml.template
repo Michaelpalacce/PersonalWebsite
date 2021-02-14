@@ -25,7 +25,8 @@ services:
             - "443:443" # For the website
 
         volumes:
-            - /etc/letsencrypt/live/stefangenov.site-0001:/etc/letsencrypt/live/stefangenov.site-0001 # SSL certificate
+            - /etc/letsencrypt/live/stefangenov.site-0001/privkey.pem:/etc/letsencrypt/live/stefangenov.site-0001/privkey.pem # SSL
+            - /etc/letsencrypt/live/stefangenov.site-0001/cert.pem:/etc/letsencrypt/live/stefangenov.site-0001/cert.pem # SSL
             - /tmp:/tmp # metrics
 
         restart: unless-stopped
