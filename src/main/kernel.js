@@ -9,6 +9,9 @@ const errorHandler	= require( './error/error_handler' );
 const logger		= require( './logging/logger' );
 const PROJECT_ROOT	= path.parse( require.main.filename ).dir;
 
+// Add environment variables to the process.env
+app.apply( app.er_env );
+
 // Attach a render function
 app.add(( event )=>{
 	event.render	= async ( templateName, variables = {} )=>{
