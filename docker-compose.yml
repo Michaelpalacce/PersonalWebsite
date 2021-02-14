@@ -8,8 +8,8 @@ services:
         working_dir: /app
         entrypoint: ["npm", "i"]
 
-#   docker-compose up app-dev ( after build )
-    app-dev:
+#   docker-compose up app ( after build )
+    app:
         build:
             context: .
             dockerfile: Dockerfile

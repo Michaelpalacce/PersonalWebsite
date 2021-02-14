@@ -1,12 +1,9 @@
 version: '3.8'
 services:
 
-#   docker-compose -f up app -d
+#   docker-compose -f docker-compose-prod.yml up app -d
     app:
-        build:
-            context: .
-            dockerfile: Dockerfile
-            target: prod
+        image: stefangenov/site:latest
 
 #       Make sure to specify the missing env variables in prod
         environment:

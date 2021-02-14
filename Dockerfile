@@ -11,6 +11,11 @@ FROM base as prod
 WORKDIR /app
 COPY . .
 RUN npm i
-CMD ["pm2-runtime", "index.js"]
-# docker build . --target prod -t sg/site
-# docker run -it -e "PM2_PUBLIC_KEY={{PUBLIC}}" -e "PM2_SECRET_KEY={{SECRET}}" -p "80:80" --restart unless-stopped sg/site
+RUN touch .env
+RUN echo -en 'REQUEST_TIMEOUT=60000\nTEMPLATES_DIR=public/html' > .env
+CMD ["pm2-runtime", "ecosystem.config.js"]
+
+# docker build -t stefangenov/site:latest --target prod . && docker push stefangenov/site:latest
+
+# docker build -t stefangenov/site:latest --target prod .
+# docker run --rm -it -p "80:80" -e "ADMIN_USERNAME=root" -e "ADMIN_PASSWORD=toor" -e "ENV=dev" --name site stefangenov/site
