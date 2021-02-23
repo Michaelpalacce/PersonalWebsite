@@ -1,4 +1,4 @@
-
+//Ew unminified code
 $( '.copyer' ).on( 'click', document, ( event ) => {
 	const element	= event.target;
 	const input		= document.createElement( 'input' );

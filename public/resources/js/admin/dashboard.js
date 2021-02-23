@@ -50,7 +50,7 @@ async function refreshStats()
 	$( '#heap-used-placeholder' ).text( convertToMb( stats.heapUsed ) );
 	$( '#heap-rss-placeholder' ).text( convertToMb( stats.rss ) );
 	$( '#os-freemem-placeholder' ).text( convertToMb( stats.freemem ) );
-	$( '#cpu-usage-placeholder' ).text( `${await getData( '/api/v1/os/cpu' )}%` );
+	// $( '#cpu-usage-placeholder' ).text( `${await getData( '/api/v1/os/cpu' )}%` );
 }
 
 setInterval(() => {

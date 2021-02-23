@@ -1,3 +1,5 @@
+//Ew unminified code
+
 /**
  * @brief	Types out elements
  *
@@ -27,14 +29,9 @@ $( '.typer' ).each(( index, element ) => {
 		element		= $( element );
 		element.show();
 		const text	= element.text();
-		const speed	= element.attr( 'data-type-speed' ) || 125;
+		const speed	= element.attr( 'data-type-speed' ) || 50;
 		const i		= 0;
 
-		type({
-			element,
-			text,
-			speed,
-			i
-		});
+		type( { element, text, speed, i } );
 	});
 });
