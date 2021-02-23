@@ -17,5 +17,4 @@ CMD ["pm2-runtime", "ecosystem.config.js"]
 
 # docker build -t stefangenov/site:latest --target prod . && docker push stefangenov/site:latest
 
-# docker build -t stefangenov/site:latest --target prod .
-# docker run --rm -it -p "80:80" -e "ADMIN_USERNAME=root" -e "ADMIN_PASSWORD=toor" -e "ENV=dev" --name site stefangenov/site
+# docker run --rm -it -p "80:80" -e "ADMIN_USERNAME=root" -e "ADMIN_PASSWORD=toor" -e "ENV=dev" stefangenov/site
